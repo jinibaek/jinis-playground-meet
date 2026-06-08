@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Jini Calendar (지인 모임 날짜 조율 앱)
 
-## Getting Started
+여러 사용자가 동시에 접속하여  
+각자 가능한 날짜를 선택하고  
+가장 많이 겹치는 날짜를 확인할 수 있는 실시간 캘린더 웹앱입니다.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Tech Stack
+- Next.js (App Router)
+- Firebase Firestore
+- Tailwind CSS
+- Vercel Deploy
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+사용자 시스템
+- 닉네임 기반 간단 로그인
+- localStorage로 세션 유지
 
-## Learn More
+캘린더 기능
+- 1~31일 날짜 선택
+- 선택 / 해제 토글
 
-To learn more about Next.js, take a look at the following resources:
+실시간 동기화
+- Firebase Firestore 저장
+- onSnapshot으로 다른 사용자 선택 즉시 반영
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+유저별 데이터
+- users 컬렉션에 개별 날짜 저장
+- 날짜별 선택 인원 및 닉네임 표시
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+통계 기능
+- 날짜별 선택 인원 수 집계
+- 가장 많이 선택된 날짜 확인 가능
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+핵심 구조
+- users/{nickname}
+  - nickname
+  - dates: [1, 5, 12, ...]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 전체 유저 데이터 실시간 조회 → 날짜별 필터링
+
+---
+
+Deployment
+- Vercel 자동 배포
+- GitHub 연동 CI/CD
+
+---
+
+프로젝트 목적
+친구 / 지인 모임 날짜를 빠르게 조율하기 위한  
+실시간 협업 캘린더 서비스
+
+---
+
+Author
+Jini
