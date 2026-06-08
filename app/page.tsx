@@ -13,15 +13,15 @@ export default function Home() {
         </h2>
 
         <div className="bg-pink-100 rounded-xl p-4 mb-4">
-          📍 하양역 근처
+          하양역 근처
           <br />
-          🚗 픽업 가능
+          픽업 가능
           <br />
-          🍲 다음날 곱창전골 제공 예정
+          다음날 곱창전골 제공 예정
         </div>
 
         <div className="bg-yellow-100 rounded-xl p-4 mb-6">
-          📅 날짜 : 지금 정하자!
+          날짜 : 지금 정하자!
         </div>
 
         <Link
