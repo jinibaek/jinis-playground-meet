@@ -33,7 +33,7 @@ export default function JoinPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-300 via-cyan-300 to-green-300 flex items-center justify-center p-6">
 
-      {/* 🔥 메인화면 버튼 */}
+      {/* 메인화면 버튼 */}
       <Link
         href="/"
         className="absolute top-6 left-6 bg-white px-4 py-2 rounded-xl shadow-md font-bold hover:scale-105 transition"
@@ -45,7 +45,7 @@ export default function JoinPage() {
       <div className="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center">
 
         <h1 className="text-4xl font-bold mb-2">
-          🌿 지니의 놀이터 입장
+          지니의 놀이터 입장
         </h1>
 
         <p className="text-gray-600 mb-6">
@@ -54,7 +54,7 @@ export default function JoinPage() {
 
         {/* 안내 */}
         <div className="bg-pink-100 rounded-xl p-4 mb-6">
-          🦎 중복 닉네임은 자동으로 차단됩니다
+          중복 닉네임은 자동으로 차단됩니다
         </div>
 
         {/* input */}
