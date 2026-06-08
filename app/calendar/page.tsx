@@ -22,7 +22,7 @@ export default function CalendarPage() {
   const [allUsers, setAllUsers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔥 로그인 체크
+  // 로그인 체크
   useEffect(() => {
     const name = localStorage.getItem("nickname");
 
@@ -34,7 +34,7 @@ export default function CalendarPage() {
     setNickname(name);
   }, []);
 
-  // 🔥 내 데이터
+  // 내 데이터
   useEffect(() => {
     if (!nickname) return;
 
@@ -53,7 +53,7 @@ export default function CalendarPage() {
     load();
   }, [nickname]);
 
-  // 🔥 전체 유저 (실시간)
+  // 전체 유저 (실시간)
   useEffect(() => {
     const unsub = onSnapshot(collection(db, "users"), (snap) => {
       setAllUsers(snap.docs.map((d) => d.data()));
@@ -62,14 +62,14 @@ export default function CalendarPage() {
     return () => unsub();
   }, []);
 
-  // 🔥 날짜별 유저
+  // 날짜별 유저
   const getUsersForDate = (date: number) => {
     return allUsers
       .filter((u) => u.dates?.includes(date))
       .map((u) => u.nickname);
   };
 
-  // 🔥 저장
+  // 저장
   const updateDates = async (newDates: number[]) => {
     if (!nickname) return;
 
@@ -93,7 +93,7 @@ export default function CalendarPage() {
     updateDates(newDates);
   };
 
-  // 🔥 ⭐ 후보 날짜 계산 함수 추가
+  // 후보 날짜 계산 함수 추가
   const getTopDates = () => {
     const count: Record<number, number> = {};
 
@@ -118,7 +118,7 @@ export default function CalendarPage() {
   return (
     <main className="min-h-screen p-6 bg-gradient-to-b from-pink-300 via-cyan-300 to-green-300">
 
-      {/* 🔥 상단 */}
+      {/* 상단 */}
       <div className="flex justify-between items-center mb-4">
 
         <Link
@@ -198,7 +198,7 @@ export default function CalendarPage() {
               )}
             </div>
 
-            {/* 🔥 후보 날짜 통계 */}
+            {/* 후보 날짜 통계 */}
             <div className="mt-4 p-4 bg-blue-50 rounded-xl">
               <h3 className="font-bold mb-2">가장 많이 겹치는 날짜</h3>
 
