@@ -129,7 +129,7 @@ export default function CalendarPage() {
         </Link>
 
         <h1 className="text-4xl font-bold text-white">
-          📅 2026년 7월
+          2026년 7월
         </h1>
 
         <div className="bg-white px-3 py-1 rounded-xl font-bold">
